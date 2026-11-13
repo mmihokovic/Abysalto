@@ -1,0 +1,6 @@
+@Abysalto.Cart.Api_HostAddress = http://localhost:5062
+
+GET {{Abysalto.Cart.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,78 @@
+# .NET build and publish output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+.artifacts/
+publish/
+
+# Visual Studio local settings and caches
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.VC.db
+*.VC.VC.opendb
+
+# VS Code: keep configuration that can be shared with the team
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.code-workspace
+
+# ReSharper and Rider local state
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+# Test results, coverage, and benchmarks
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+BenchmarkDotNet.Artifacts/
+
+# Generated NuGet packages
+*.nupkg
+*.snupkg
+
+# Local environment settings and private certificates
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.template
+appsettings.Local.json
+appsettings.*.Local.json
+*.pfx
+*.p12
+
+# Local deployment profiles
+*.pubxml
+*.publishsettings
+*.azurePubxml
+
+# Logs and temporary files
+[Ll]ogs/
+*.log
+*.tmp
+*.tmp_proj
+*.bak
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

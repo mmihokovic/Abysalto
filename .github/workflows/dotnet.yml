@@ -1,0 +1,36 @@
+name: .NET CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        working-directory: Abysalto.Cart.Api
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore Abysalto.Cart.Api.slnx
+
+      - name: Build
+        run: dotnet build Abysalto.Cart.Api.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test Abysalto.Cart.Api.slnx --configuration Release --no-build
