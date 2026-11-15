@@ -1,4 +1,13 @@
+using Abysalto.Cart.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("CartDb")
+    ?? throw new InvalidOperationException("Connection string 'CartDb' is missing.");
+
+builder.Services.AddDbContext<CartDbContext>(
+    options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
