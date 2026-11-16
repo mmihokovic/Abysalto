@@ -25,7 +25,9 @@ public sealed class CartDbContext(DbContextOptions<CartDbContext> options)
 
         var items = modelBuilder.Entity<CartItem>();
         items.HasKey(x => new { x.CartId, x.ProductId });
-        items.HasOne<Product>().WithMany().HasForeignKey(x => x.ProductId)
+        items.HasOne(x => x.Product)
+            .WithMany()
+            .HasForeignKey(x => x.ProductId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
